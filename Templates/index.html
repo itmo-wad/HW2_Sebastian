@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de {{ nombre }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div style="text-align: right; padding: 20px;">
+        <a href="{{ url_for('logout') }}" style="padding: 5px 15px; background-color: #f44336; color: white; text-decoration: none; border-radius: 5px;">Logout</a>
+    </div>
+    <header>
+        <h1>Welcome, {{ name }}</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Profile Basic</h2>
+            <p>My name is Sebastian Guevara, I am from Colombia, I am currently studying a master's degree in information security at ITMO University in Russia, I like this class of web development because you learn new skills and strengthen others.</p>
+            <img src="{{ url_for('static', filename='images/IMG_0762-2.jpg') }}" alt="Foto in the sea">
+            <figcaption>Photo in the sea when I was studying in my country</figcaption>        
+        </section>
+    </main>
+    <footer>
+        <p>Contact: {{ email }}</p>
+        <p>Current Time: {{ date_current.strftime('%Y-%m-%d %H:%M') }}</p>
+    </footer>
+</body>
+</html>
